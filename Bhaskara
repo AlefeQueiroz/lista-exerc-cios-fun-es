@@ -1,0 +1,37 @@
+\\Faça uma função que recebe por parâmetro os valores necessários para o cálculo
+\\da fórmula de báskara e mostra, as suas raízes, caso seja possível calcular.
+
+#include<stdio.h>
+#include<locale.h>
+#include<math.h>
+float root1(int a, int b,int c);
+float root2(int a, int b,int c);
+int main(){
+	int a,b,c;
+	float res1,res2;
+	setlocale(LC_ALL,"portuguese");
+	printf("digite o valor de a: ");
+	scanf("%d",&a);
+	printf("digite o valor de b: ");
+	scanf("%d",&b);
+	printf("digite o valor de c: ");
+	scanf("%d",&c);
+	res1 = root1(a,b,c);
+	res2 = root2(a,b,c);
+	printf("as raízes da equação são  %f e %f:",res1,res2);
+	return 0;
+}
+float root1(int a, int b, int c){
+	float delta;
+	float x1;
+	delta = pow(b,2) - 4 * (a * c);
+	x1 = ( - b  + sqrt(delta)) / (2 * a);
+	return x1;
+}
+float root2(int a,int b,int c){
+	float delta;
+	float x2;
+	delta = pow(b,2) - 4 * (a * c);
+	x2 = (- b - sqrt(delta)) / (2 * a);
+	return x2;
+}
