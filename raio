@@ -1,0 +1,21 @@
+\\Faça uma função que recebe por parâmetro o raio
+\\de uma esfera e calcula o seu volume (V = 4/3 π r3).
+#include<stdio.h>
+#include<math.h>
+#include<locale.h>
+float volume(float r);
+int main(){
+	setlocale(LC_ALL,"portuguese");
+	float res,r;
+	printf("digite o valor do raio: ");
+	scanf("%f",&r);
+	res = volume(r);
+	printf("o volume é: %f ",res);
+	return 0;
+}
+float volume(float r){
+	float vol;
+	const float PI = 3.14;
+	vol = PI * 4/3  * pow(r,3);
+	return vol;
+}
