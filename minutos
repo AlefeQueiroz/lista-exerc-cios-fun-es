@@ -1,0 +1,29 @@
+\\Faça uma função que recebe, por parâmetro, a hora de início e a hora de término de um jogo,
+\\ambas subdivididas em 2 valores distintos: horas e minutos. A função deve retornar,
+\\também por parâmetro, a duração do jogo em minutos, considerando que o tempo máximo de duração
+\\de um jogo é de 24 horas e que o jogo pode começar em um dia e terminar no outro.
+
+
+#include<stdio.h>
+#include<locale.h>
+int duracao(int h1,int m1,int h2,int m2);
+int main(){
+    setlocale(LC_ALL,"portuguese");
+    int h1,m1,h2,m2,res;
+    printf("digite a hora de inicio: ");
+    scanf("%d",&h1);
+    printf("digite os minutos de inicio: ");
+    scanf("%d",&m1);
+    printf("digite a hora de termino: ");
+    scanf("%d",&h2);
+    printf("digite os minutos de termino: ");
+    scanf("%d",&m2);
+    res = duracao(h1,m1,h2,m2);
+    printf("a duração do jogo foi de: %d minutos",res);
+    return 0;
+}
+int duracao(int h1,int m1,int h2,int m2){
+    int duracao;
+    duracao = ((h1 * 60) + m1) - ((h2 * 60) + m2);
+    return duracao * -1;
+}
